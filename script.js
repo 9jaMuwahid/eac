@@ -3,13 +3,13 @@ const sides = document.querySelector('.sides');
 
 let boxRow = 16; // Default grid size
 
-// Function to create boxes based on grid size
+// Function to create boxes based on grid size input
 function createGrid(rows) {
-    container.innerHTML = ''; // Clear existing boxes
+    container.innerHTML = ''; // Clear all of the existing boxes
 
-    // Set grid-template-columns and grid-template-rows dynamically based on user input
-    container.style.gridTemplateColumns = `repeat(${rows}, 1fr)`; // Creates rows of equal size
-    container.style.gridTemplateRows = `repeat(${rows}, 1fr)`; // Creates columns of equal size
+    // Set grid-template-columns and grid-template-rows to be able to change
+    container.style.gridTemplateColumns = `repeat(${rows}, 1fr)`; 
+    container.style.gridTemplateRows = `repeat(${rows}, 1fr)`; 
 
     // Create boxes
     for (let i = 0; i < rows * rows; i++) {
@@ -18,7 +18,7 @@ function createGrid(rows) {
         container.appendChild(box);
     }
 
-    // Add event listener for mouseover to change box color
+    // Add event listener for mouseover to change box colour
     const boxes = document.querySelectorAll('.box');
     boxes.forEach(box => {
         box.addEventListener('mouseover', () => {
@@ -37,7 +37,7 @@ createGrid(boxRow); // Create the initial grid
 sides.addEventListener('click', () => {
     let numSquares = prompt("How many squares per side would you like? (Max 100)");
 
-    // Ensure the input is a number between 1 and 100
+    // Number betwwn 1 and 100
     numSquares = Math.min(Math.max(Number(numSquares), 1), 100); 
 
     if (numSquares) {
